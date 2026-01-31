@@ -22,14 +22,14 @@ void showMenu() {
 
 /* ---------- FUNCTION 2 ----------
    with Return type, without arguments */
-int totalStudents() {
+int totalStudents() {       //return total number of students//
     return 3;
 }
 
 /* ---------- FUNCTION 3 ----------
    with Return type, With arguments */
-char calculateGrade(int total_marks) {
-    if (total_marks >= 80)
+char calculateGrade(int total_marks) {      // take marks as intput return grade char//
+    if (total_marks >= 80)      //Logic used//
         return 'A';
     else if (total_marks >= 60)
         return 'B';
@@ -41,8 +41,11 @@ char calculateGrade(int total_marks) {
 
 /* ---------- FUNCTION 4 ----------
    without return type, With arguments */
-void enterStudentDetails(struct student s[], int n) {
+void enterStudentDetails(struct student s[], int n) {       
     int i;
+    /*n stores number of students,
+    void means this function does NOT return any value
+    i---> is a loop variable used to access each student*/
 
     for (i = 0; i < 3; i++) {
         
@@ -89,28 +92,28 @@ void displayStudentDetails(struct student s[], int n) {
 /* ---------- MAIN FUNCTION ---------- */
 int main() {
     struct student s[3];
-    int choice;
-    int dataEntered = 0;
+    int choice;     //chioce--->menu selection//
+    int dataEntered = 0;        //checks whether data is enterd or not//
 
     int n = totalStudents();
 
-    do {
+    do {        //excutes menu at lest once//
         showMenu();
         printf("Enter your choice: ");
-        scanf("%d", &choice);
+        scanf("%d", &choice);       //reads user choice//
 
         switch (choice) {
             case 1:
-                enterStudentDetails(s, n);
-                dataEntered = 1;
+                enterStudentDetails(s, n);      //Calls input function Sets flag to confirm data entered//
+                dataEntered = 1;        //1--->student data enterd//
                 break;
 
             case 2:
-                if (dataEntered == 0)
+                if (dataEntered == 0)       //0--->No student data enterd//
                     printf("\n NO data found please enter data!\n");
                 else
                     displayStudentDetails(s, n);
-                break;
+                break;      //stops switch//
 
             case 3:
                 printf("\nThank you! Program ended.\n");
