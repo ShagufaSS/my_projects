@@ -1,3 +1,5 @@
+//Pointer to Array//
+
 #include <stdio.h>
 
 int main()
@@ -28,7 +30,7 @@ int main()
     printf("\n");
 
     // Modify value using pointer to whole array
-    (*p2)[0] = 100;
+    (*p2)[0] = 1000;
 
     printf("After modification:\n");
     printf("arr[0] = %d\n", arr[0]);
